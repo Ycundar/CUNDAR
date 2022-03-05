@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\ClienteController;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// ROUTES CLIENTE--
+Route::get('/api/cliente', [ClienteController::class,'index']);
+Route::get('/api/cliente/getCliente', [ClienteController::class,'getCliente']);
+Route::post('/api/cliente/registrar', [ClienteController::class,'store']);
+Route::put('/api/cliente/actualizar', [ClienteController::class,'update']);
+Route::post('/api/cliente/eliminar', [ClienteController::class,'destroy']);
